@@ -2,9 +2,9 @@ import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 
 export  class WeatherList extends PureComponent {
-  _renderWeather = (city) => {
+  _renderWeather = ({city}) => {
     return (
-      <tr>
+      <tr key={city.name}>
         <td>
           {city.name}
         </td>
@@ -13,7 +13,6 @@ export  class WeatherList extends PureComponent {
 
   }
   render() {
-    console.log(this.props)
     return (
       <table>
         <thead>

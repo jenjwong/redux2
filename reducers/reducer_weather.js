@@ -1,9 +1,10 @@
-import {FETCH_WEATHER} from '../actions';
-export default function WeatherReducer(state=[], action) {
+import { FETCH_WEATHER } from '../actions/index';
+
+export default function(state = [], action) {
   console.log(action, 'reducer')
-  switch(action.type) {
-    case FETCH_WEATHER:
-      return [...state, action.payload.data];
+  switch (action.type) {
+  case FETCH_WEATHER:
+    return [ action.payload.data, ...state ];
   }
   return state;
 }

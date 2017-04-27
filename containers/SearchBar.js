@@ -5,7 +5,7 @@ import {fetchWeather} from '../actions';
 
 const INTIAL_STATE = {term: ''}
 
-export class SearchBar extends PureComponent {
+class SearchBar extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -21,7 +21,6 @@ export class SearchBar extends PureComponent {
     event.preventDefault();
     this.props.fetchWeather(this.state.term);
     this.setState(INTIAL_STATE);
-
   }
   render(){
     return(
